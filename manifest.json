@@ -1,0 +1,42 @@
+{
+  "name": "kafka-mcp",
+  "version": "1.0.0",
+  "description": "Read-only MCP server for Kafka — inspect topics, consumer groups, broker health, and sample messages.",
+  "entrypoint": "python server.py",
+  "runtime": "python",
+  "env": {
+    "KAFKA_BOOTSTRAP_SERVERS": {
+      "required": true,
+      "description": "Comma-separated list of Kafka bootstrap servers (e.g. broker1:9092,broker2:9092)"
+    },
+    "KAFKA_SECURITY_PROTOCOL": {
+      "required": false,
+      "default": "PLAINTEXT",
+      "description": "Security protocol: PLAINTEXT, SSL, SASL_PLAINTEXT, or SASL_SSL"
+    },
+    "KAFKA_SASL_MECHANISM": {
+      "required": false,
+      "default": "PLAIN",
+      "description": "SASL mechanism: PLAIN, SCRAM-SHA-256, or SCRAM-SHA-512"
+    },
+    "KAFKA_SASL_USERNAME": {
+      "required": false,
+      "description": "SASL username (required if using SASL)"
+    },
+    "KAFKA_SASL_PASSWORD": {
+      "required": false,
+      "secret": true,
+      "description": "SASL password (required if using SASL)"
+    }
+  },
+  "tools": [
+    "list_topics",
+    "get_topic_metadata",
+    "get_consumer_lag",
+    "get_broker_health",
+    "sample_messages",
+    "get_consumer_group_status"
+  ],
+  "tags": ["kafka", "streaming", "observability"],
+  "readme": "README.md"
+}
