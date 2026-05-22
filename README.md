@@ -4,8 +4,16 @@ Read-only MCP server for Apache Kafka. Exposes cluster inspection, consumer grou
 
 ## Install
 
+### Via apm (recommended)
+Install [apm](https://github.com/arcmesh-labs/arcmesh-pm-go) first, then:
 ```bash
 apm install kafka-mcp
+```
+
+### Manual
+```bash
+git clone https://github.com/arcmesh-labs/kafka-mcp.git
+pip install -r requirements.txt
 ```
 
 ## Configuration
